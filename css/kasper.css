@@ -1,0 +1,1390 @@
+/*todo Start Css Varibals */
+:root {
+    --main-color: #00c7fc;
+    --main-padding: 100px;
+    --main-line-hight: 1.6;
+    --second-color: #a8a8a8;
+    --background-color: rgb(8 116 147 / 60%);
+
+
+}
+
+/* todo End Css Varibals */
+
+/* todo Start Global Ralus */
+.global-header {
+    text-align: center;
+}
+
+.global-header h2 {
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 60px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+
+}
+
+.global-header h2::before {
+    content: '';
+    position: absolute;
+    width: 130px;
+    height: 2px;
+    background-color: #081414;
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+}
+
+.global-header h2::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: black solid 2px;
+    left: 50%;
+    bottom: -37px;
+    transform: translateX(-50%);
+    background: white;
+}
+
+
+.global-header p {
+    max-width: 500px;
+    margin: 0 auto 100px;
+    line-height: 1.8;
+    color: #a8a8a8;
+}
+
+/* todo Start Global Componant */
+
+/* todo End Global Componant */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* todo Small Screen */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* todo Maduim Screen */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* todo Large Screen */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* todo End Global Rauls */
+
+
+/* todo Start Header Section */
+header {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    z-index: 99;
+
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    min-height: 99px;
+    z-index: 999;
+}
+
+header .container::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: calc(100% - 30px);
+    background-color: #726f71;
+    bottom: 0;
+    left: 15px;
+}
+
+header .container img {
+    width: 115px;
+}
+
+header .container nav {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .container nav .togle-menu {
+    font-size: 22px;
+    color: white;
+
+}
+
+@media (min-width:768px) {
+    header nav .togle-menu {
+        display: none;
+    }
+}
+
+header .container nav ul {
+    display: flex;
+}
+
+@media (max-width:767px) {
+    header .container nav ul {
+        display: none;
+    }
+
+    header nav .togle-menu:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+
+    }
+
+    header nav .togle-menu:hover+ul li a {
+        padding: 15px;
+    }
+
+}
+
+header .container nav ul a {
+    padding: 40px 10px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+header .container nav ul .active,
+header .container nav ul a:hover {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    position: relative;
+    z-index: 2;
+}
+
+header .container nav .form {
+    border-left: 1px solid white;
+    width: 40px;
+    height: 30px;
+    margin-left: 20px;
+    position: relative;
+}
+
+header .container nav .form i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    color: white;
+}
+
+/* todo End Header Section */
+/* todo Start Landing Section */
+
+.landing {
+    min-height: 100vh;
+    background-image: url(../img/landing.jpg);
+    background-size: cover;
+    position: relative;
+    width: 100%;
+
+}
+
+.landing .overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 60%);
+    height: 100%;
+    width: 100%;
+}
+
+.landing .Text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: var(--background-color);
+    padding: 50px;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+
+}
+
+@media(max-width:767px) {
+    .landing .Text {
+        width: 100%;
+    }
+}
+
+.landing .Text .content {
+    max-width: 500px;
+}
+
+@media(max-width:767px) {
+    .landing .Text .content {
+        max-width: 100%;
+    }
+}
+
+
+.landing .Text h2 {
+    line-height: 1.5;
+    font-size: 32px;
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+@media(max-width:767px) {
+    .landing .Text .content h2 {
+        font-size: 30px;
+
+    }
+}
+
+.landing .Text .content p {
+    line-height: 2;
+    font-size: 14px;
+
+}
+
+@media(max-width:767px) {
+    .landing .Text .content p {
+        font-size: 12px;
+
+    }
+}
+
+.landing .change-background {
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    color: #dddddd;
+}
+
+@media(max-width:767px) {
+    .landing .change-background {
+        display: none;
+    }
+}
+
+.landing .fa-angle-left {
+
+    left: 30px;
+
+}
+
+.landing .fa-angle-right {
+    right: 30px;
+
+
+}
+
+.landing .bullets {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    bottom: 30px;
+    gap: 10px;
+    transform: translateX(-50%);
+}
+
+.landing .bullets li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    gap: 2px;
+    border: 1px #dddddd solid;
+
+}
+
+.landing .bullets .active {
+    background-color: var(--main-color);
+    border: none;
+
+}
+
+/* todo End landing Section*/
+/* todo Satrt Services Section*/
+.Services-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+@media (min-width:768px) {
+    .Services-section .Services-contrent {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 60px;
+    }
+
+}
+
+.Services-section .Services-contrent .serv {
+    display: flex;
+    margin-top: 20px;
+
+}
+
+@media (max-width:767px) {
+    .Services-section .Services-contrent .serv {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+}
+
+.Services-section .Services-contrent .serv i {
+    margin-right: 90px;
+    font-size: 40px;
+}
+
+@media (max-width:767px) {
+    .Services-section .Services-contrent .serv i {
+        margin: 0 0 40px 0;
+    }
+}
+
+.Services-section .Services-contrent .serv h3 {
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.Services-section .Services-contrent .serv p {
+    color: #a8a8a8;
+    line-height: 1.5;
+}
+
+/* todo End Services Section*/
+
+/* todo Start Desgin Section*/
+.Desgin-section {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url(/img/design-features.jpg);
+    height: 600px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.Desgin-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 60%);
+}
+
+.Desgin-section .img {
+    position: relative;
+    flex: 1;
+    text-align: center;
+
+}
+
+@media (max-width:992px) {
+
+    .Desgin-section .img {
+        display: none;
+
+    }
+}
+
+.Desgin-section .img img {
+    position: relative;
+    bottom: -130px;
+}
+
+.Desgin-section .text {
+    background-color: var(--background-color);
+    flex: 1;
+    z-index: 22;
+    padding: 50px;
+    color: white;
+}
+
+.Desgin-section .text h2 {
+    font-weight: normal;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.Desgin-section .text ul li {
+    position: relative;
+    padding: 15px 0;
+
+}
+
+.Desgin-section .text ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f108";
+    font-weight: 900;
+    top: 1px;
+    margin-right: 15px;
+}
+
+/* todo End Desgin Section*/
+/* todo Start Portfolio Section*/
+.Portfolio-section {
+    padding-top: var(--main-padding);
+}
+
+.Portfolio-section .listbar {
+    margin: 30px auto;
+
+}
+
+.Portfolio-section .listbar ul {
+    display: flex;
+    justify-content: center;
+}
+
+.Portfolio-section .listbar ul li {
+    padding: 10px;
+}
+
+.Portfolio-section .listbar .active {
+    background-color: #00c7fc;
+    color: white;
+}
+
+.Portfolio-section .img-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.Portfolio-section .img-container .box-img {
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width:768px) {
+    .Portfolio-section .img-container .box-img {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width:1199px) {
+    .Portfolio-section .img-container .box-img {
+        flex-basis: 25%;
+    }
+}
+
+.Portfolio-section .img-container .box-img img {
+    max-width: 100%;
+    transition: 0.3s;
+}
+
+.Portfolio-section .img-container .box-img:hover img {
+    scale: 1.1;
+    rotate: 5deg;
+}
+
+.Portfolio-section .img-container .box-img .caption {
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+    bottom: -100%;
+    transition: 0.3s;
+
+}
+
+.Portfolio-section .img-container .box-img:hover .caption {
+    bottom: 0;
+}
+
+.more-datils {
+    margin: 40px auto;
+    text-align: center;
+
+}
+
+.more-datils a {
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    transition: 0.3s;
+
+}
+
+.more-datils a:hover {
+    background-color: #0288ad;
+    ;
+}
+
+/* todo End Portfolio Section*/
+/* todo Start video Section*/
+.video-section {
+    width: 100%;
+    position: relative;
+}
+
+.video-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 40%);
+}
+
+.video-section video {
+    width: 100%;
+}
+
+.video-section .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #047fafb5;
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+@media (max-width:767px) {
+    .video-section .text {
+        height: 100%;
+        width: 85%;
+    }
+}
+
+.video-section .text h4 {
+    font-weight: normal;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width:767px) {
+    .video-section .text h4 {
+        font-size: 20px;
+    }
+}
+
+.video-section .text p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+@media (max-width:767px) {
+    .video-section .text p {
+        font-size: 14px;
+    }
+}
+
+.video-section .text button {
+    all: unset;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 15px 20px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+@media (max-width:767px) {
+    .video-section .text button {
+        padding: 10px 15px;
+    }
+}
+
+.video-section .text button:hover {
+    background-color: rgb(39, 39, 39)
+}
+
+/* todo End video Section*/
+/* todo Start about Section*/
+.about-section {
+    padding-top: var(--main-padding);
+    overflow: hidden;
+    text-align: center;
+}
+
+.about-section img {
+    position: relative;
+    bottom: -120px;
+    max-width: 100%;
+    margin-top: -120px;
+}
+
+@media (max-width:767px) {
+    .about-section img {
+        bottom: -60px;
+        margin-top: -60px;
+    }
+
+}
+
+/* todo End about Section*/
+
+/* todo Start Statistics Section*/
+.Statistics-section {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url(/img/stats.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    color: white;
+
+}
+
+.Statistics-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 70%);
+}
+
+.Statistics-content {
+    display: flex;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background-color: var(--background-color);
+    padding: 50px;
+
+}
+
+@media (max-width:767px) {
+    .Statistics-content {
+        flex-direction: column;
+        gap: 20px;
+
+    }
+}
+
+.Statistics-content .box {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+
+
+}
+
+@media (max-width:767px) {
+    .Statistics-content .box {
+        flex-basis: 100%;
+
+    }
+}
+
+@media (min-width:768px) {
+    .Statistics-content .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width:991px) {
+    .Statistics-content .box {
+        flex-basis: 25%;
+    }
+}
+
+.Statistics-content .box i {
+    background-color: #081414;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Statistics-content .box h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* todo End  Statistics Section*/
+/* todo Start  OurSkills Section*/
+.OurSkills {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.OurSkills .skill-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+}
+
+@media(max-width:992px) {
+    .OurSkills .skill-content {
+        flex-direction: column;
+    }
+}
+
+.OurSkills .skill-content [class*="col"] {
+    flex-basis: 45%;
+}
+
+@media (max-width:767px) {
+    .OurSkills .skill-content [class*="col"] {
+        flex-basis: 100%
+    }
+}
+
+.OurSkills .skill-content h3 {
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+.OurSkills .skill-content p {
+    text-align: center;
+    margin: 50px 0;
+    color: var(--second-color);
+}
+
+.OurSkills .skill-content .col-datils {
+    position: relative;
+}
+
+.OurSkills .skill-content .col-datils .about-skill {
+    display: flex;
+    margin-bottom: 40px;
+
+
+
+
+}
+
+@media (max-width:767px) {
+    .OurSkills .skill-content .col-datils .about-skill {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.OurSkills .skill-content .col-datils .about-skill img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 40px;
+}
+
+@media (max-width:767px) {
+    .OurSkills .skill-content .col-datils .about-skill img {
+        margin-bottom: 20px;
+    }
+}
+
+.OurSkills .skill-content .col-datils .about-skill .text {
+    line-height: 1.8;
+    border-bottom: 1px solid #a8a8a8;
+}
+
+.OurSkills .skill-content .col-datils .about-skill p {
+    margin-bottom: 10px;
+    margin-top: 0;
+    font-size: 14px;
+    text-align: right;
+
+}
+
+.OurSkills .skill-content .col-datils .bullets {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    bottom: 30px;
+    gap: 10px;
+    transform: translateX(-50%);
+}
+
+@media (max-width:992px) {
+    .OurSkills .skill-content .col-datils .bullets {
+        bottom: 0;
+    }
+}
+
+.OurSkills .skill-content .col-datils .bullets li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    gap: 2px;
+    border: 1px #dddddd solid;
+
+}
+
+.OurSkills .skill-content .col-datils .bullets .active {
+    background-color: var(--main-color);
+    border: none;
+
+}
+
+.OurSkills .skill-content .col-count .content .brog {
+    margin-bottom: 40px;
+}
+
+.OurSkills .skill-content .col-count .content h4 {
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.OurSkills .skill-content .col-count .content .count {
+    height: 30px;
+    background-color: #dedadc;
+    position: relative;
+}
+
+.OurSkills .skill-content .col-count .content .count::before {
+    content: "";
+    position: absolute;
+    background-color: black;
+    padding: 4px 0;
+    width: 40px;
+    top: -50px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+.OurSkills .skill-content .col-count .content .count::after {
+    content: "";
+
+    border: 10px solid;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    top: calc(0% - 25px);
+}
+
+.OurSkills .skill-content .col-count .content .count span {
+    display: block;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+.OurSkills .skill-content .col-count .content .brog:first-child span {
+    width: 90%;
+}
+
+.OurSkills .skill-content .col-count .content .brog:nth-child(2) span {
+    width: 85%;
+}
+
+.OurSkills .skill-content .col-count .content .brog:nth-child(3) span {
+    width: 80%;
+}
+
+.OurSkills .skill-content .col-count .content .brog:last-child span {
+    width: 90%;
+}
+
+.OurSkills .skill-content .col-count .content .brog:first-child .count::before,
+.OurSkills .skill-content .col-count .content .brog:last-child .count::before {
+    content: "90%";
+    left: 86%;
+
+}
+
+.OurSkills .skill-content .col-count .content .brog:first-child .count::after,
+.OurSkills .skill-content .col-count .content .brog:last-child .count::after {
+    left: 88%;
+
+}
+
+.OurSkills .skill-content .col-count .content .brog:nth-child(2) .count::before {
+    content: "85%";
+    left: 81%;
+}
+
+.OurSkills .skill-content .col-count .content .brog:nth-child(2) .count::after {
+    left: 83%;
+}
+
+.OurSkills .skill-content .col-count .content .brog:nth-child(3) .count::before {
+    content: "80%";
+    left: 76%;
+}
+
+.OurSkills .skill-content .col-count .content .brog:nth-child(3) .count::after {
+    left: 78%;
+}
+
+/* todo End  OurSkills Section*/
+/* todo Start quote Section*/
+.quote-section {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url(/img/quote.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.quote-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 70%);
+}
+
+.quote-section .text {
+    position: relative;
+}
+
+.quote-section .text q {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+@media (max-width:767px) {
+    .quote-section .text q {
+        font-size: 20px;
+    }
+}
+
+/* todo End  quote Section*/
+/* todo Start  Pricing Section*/
+.Pricing-section {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.Pricing-section .Plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.Pricing-section .Plans .plan {
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+@media (max-width:767px) {
+    .Pricing-section .Plans .plan {
+        margin-bottom: 20px;
+    }
+}
+
+.Pricing-section .Plans .plan .head {
+    padding: 40px 20px;
+    border-top: 2px solid #00c7fc;
+    border-bottom: 2px solid #00c7fc;
+}
+
+.Pricing-section .Plans .plan .head h3 {
+    font-weight: normal;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.Pricing-section .Plans .plan .head span {
+    font-weight: bold;
+    font-size: 60px;
+    position: relative;
+}
+
+.Pricing-section .Plans .plan .head span::before {
+    content: "$";
+    position: absolute;
+    left: -30%;
+    top: 0px;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.Pricing-section .Plans .plan .head span::after {
+    content: "/Mo";
+    position: absolute;
+    right: -70%;
+    bottom: 0px;
+    font-size: 25px;
+}
+
+.Pricing-section .Plans .plan .paln-datils {
+    padding: 40px 20px;
+    border-bottom: 2px solid #00c7fc;
+}
+
+.Pricing-section .Plans .plan .paln-datils ul li {
+    padding: 20px 10px;
+    position: relative;
+
+}
+
+.Pricing-section .Plans .plan .paln-datils ul li::after {
+
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 2px;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translatex(-50%);
+    top: 100%;
+}
+
+.Pricing-section .Plans .plan .foot {
+    padding: 40px 10px;
+}
+
+.Pricing-section .Plans .plan .foot a {
+    background-color: transparent;
+    padding: 20px 30px;
+    border: 2px solid var(--main-color);
+    text-decoration: none;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+    transition: all 0.4s
+}
+
+.Pricing-section .Plans .plan .foot a:hover {
+    background-color: var(--main-color);
+    color: black;
+}
+
+.Pricing-section .text-end {
+    text-align: center;
+    margin-top: 60px;
+    display: block;
+    font-size: 30px;
+
+}
+
+@media (max-width:767px) {
+    .Pricing-section .text-end {
+        font-size: 25px;
+    }
+}
+
+.Pricing-section .container>a {
+    text-align: center;
+    margin-top: 60px;
+    margin: 40px auto;
+    width: fit-content;
+    display: block;
+    background-color: var(--main-color);
+    padding: 20px 30px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.Pricing-section .container>a:hover {
+    background-color: #008db4;
+}
+
+/* todo End  Pricing Section*/
+/* todo Start  Subscribe Section*/
+.Subscribe-section {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url(/img/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.Subscribe-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 50%);
+}
+
+.Subscribe-section .container {
+    display: flex;
+    color: white;
+    position: relative;
+    align-items: center;
+}
+
+@media (max-width:991px) {
+    .Subscribe-section .container {
+        flex-direction: column;
+    }
+}
+
+.Subscribe-section .container form {
+    display: flex;
+    width: 500px;
+    max-width: 100%;
+    position: relative;
+    caret-color: var(--main-color);
+}
+
+.Subscribe-section .container form i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    font-size: 25px;
+
+}
+
+.Subscribe-section .container form input[ type="email"] {
+    padding: 20px 20px 20px 60px;
+    background-color: transparent;
+    border: solid 1px var(--second-color);
+    width: calc(100% - 130px);
+    border-right: none;
+}
+
+.Subscribe-section .container form input[ type="email"]::placeholder {
+    text-transform: capitalize;
+    color: white;
+}
+
+.Subscribe-section .container form input[ type="button"] {
+    width: 130px;
+    padding: 20px;
+    border: solid 1px var(--second-color);
+    background-color: var(--main-color);
+    border-left: none;
+    text-transform: uppercase;
+}
+
+.Subscribe-section .container form input[ type="email"]:focus,
+.Subscribe-section .container form input[ type="button"]:focus {
+    outline: none;
+}
+
+.Subscribe-section .container p {
+    margin-left: 60px;
+}
+
+@media (max-width:991px) {
+    .Subscribe-section .container p {
+        margin-top: 60px;
+        ;
+        margin-left: 0;
+    }
+}
+
+/* todo End  Subscribe Section*/
+/* todo Start Contact Us Section*/
+.Contact-section {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.Contact-section .contact-content {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width:767px) {
+    .Contact-section .contact-content {
+        flex-direction: column-reverse;
+    }
+}
+.Contact-section .contact-content form {
+    flex-basis: 75%;
+    caret-color: var(--main-color);
+}
+
+.Contact-section .contact-content form .Main-input:focus {
+    outline: none;
+}
+
+.Contact-section .contact-content form .Main-input {
+    padding: 20px;
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.Contact-section .contact-content form textarea.Main-input {
+    height: 200px;
+}
+
+.Contact-section .contact-content form input[type="submit"] {
+    padding: 15px 30px;
+    text-transform: uppercase;
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    margin-left: auto;
+    border: none;
+}
+
+.Contact-section .contact-content .info {
+    flex-basis: 20%;
+}
+@media (max-width:767px) {
+    .Contact-section .contact-content .info {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+.Contact-section .contact-content .info h4 {
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.Contact-section .contact-content .info span {
+    display: block;
+    color: var(--second-color);
+    margin-bottom: 5px;
+
+}
+
+.Contact-section .contact-content .info h4:nth-of-type(2) {
+    margin-top: 80px;
+}
+@media (max-width:767px) {
+    .Contact-section .contact-content .info h4:nth-of-type(2) {
+        margin-top: 30px;
+    }
+}
+
+.Contact-section .contact-content .info address {
+    line-height: 2;
+    color: var(--second-color);
+}
+
+/* todo End Contact Us Section*/
+/* todo Start footer Section*/
+footer {
+    padding-top:calc(var(--main-padding) / 2) ;
+    padding-bottom: calc(var(--main-padding) / 2) ;
+    background-image: url(/img/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+}
+footer::before {
+     content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 60%);
+}
+footer .container {
+color: white;
+position: relative;
+text-align: center;
+}
+footer .container img {
+    width: 110px;
+    margin-bottom: 40px;
+}
+footer .container p {
+
+position: relative;
+    font-size: 25px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+footer .container p::after {
+        content: "";
+    position: absolute;
+    width: 200px;
+    background-color: white;
+    height: 1px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+footer .container .link {
+    margin-top: 70px;
+    
+}
+footer .container .link a {
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+footer .container .link a:hover {
+    color: var(--main-color);
+
+}
+footer .container .end-footer {
+    margin-top: 60px;
+    
+}
+footer .container .end-footer span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+
+/* todo End footer Section*/
